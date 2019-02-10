@@ -1,0 +1,60 @@
+.nav-container {
+  border: 2px solid black;
+}
+
+.topnav {
+  float: right;
+}
+
+input[type="text"],
+input[type="search"] {
+  padding: 6px;
+  /* margin-top: 5px; */
+  font-size: 17px;
+  border: 1px solid black;
+}
+
+button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.nav-title {
+  color: black;
+}
+.nav-form {
+  padding: 12px;
+}
+
+.navlinks {
+  background-color: royalblue;
+}
+
+.navlinks {
+  display: flex;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #555;
+}
+
+.links {
+  display: flex;
+  flex: 1;
+  border: 1px solid gray;
+  background-color: royalblue;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+
+.links:hover {
+  color: red;
+}
