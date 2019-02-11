@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      parent: "home"
+      parent: "welcome"
     };
   }
   render() {
