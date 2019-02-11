@@ -1,0 +1,69 @@
+.home-container {
+  height: 90vh;
+  display: grid;
+  margin: 0 auto;
+  padding: 0;
+
+  grid-template-rows: auto;
+  grid-template-columns: 400px auto;
+
+  grid-template-areas: "sidebar content";
+}
+
+.card-container {
+  height: 17%;
+  width: 80%;
+  margin-bottom: 5px;
+  /* border: 5px solid #4167b2; */
+  background-color: white;
+}
+
+.post-container {
+  height: 25vh;
+  width: 60vw;
+  margin-bottom: 5px;
+  /* border: 5px solid #4167b2; */
+}
+
+.postcard-container {
+  height: 40vh;
+
+  margin-bottom: 20px;
+  /* border: 5px solid #4167b2; */
+}
+button.modal-button {
+}
+
+.signature {
+  padding: 2px 16px;
+  background-color: #4167b2;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {
+  margin: auto;
+  padding: 2px 16px;
+  width: 51vw;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 80%;
+  margin: auto;
+  padding: 5px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+textarea {
+  width: 65%;
+  height: 85px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}

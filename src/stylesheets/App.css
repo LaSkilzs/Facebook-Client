@@ -1,0 +1,8 @@
+.container {
+  height: 100vh;
+  display: grid;
+  margin: auto;
+  padding: 0;
+  grid-template-rows: 100px auto;
+  background-color: #e9ebee;
+}

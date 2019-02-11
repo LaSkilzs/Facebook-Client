@@ -1,6 +1,9 @@
 import React from "react";
+import "../stylesheets/welcome.css";
+import WelcomePage from "../components/WelcomeCard";
+import Forms from "../lists/Forms";
 
-export default class Welcome extends React.Component {
+class Welcome extends React.Component {
   constructor() {
     super();
     this.state = {};
@@ -9,14 +12,12 @@ export default class Welcome extends React.Component {
     return (
       <React.Fragment>
         <div className="welcome-container">
-          <h2>Welcome Container</h2>
-          <div className="cell cell-1">cell 1</div>
-          <div className="cell cell-2">cell 2</div>
-          <div className="cell cell-3">cell 3</div>
-          <div className="cell cell-4">cell 4</div>
-          <div className="cell cell-5">cell 5</div>
+          <WelcomePage />
+          <Forms />
         </div>
       </React.Fragment>
     );
   }
 }
+
+export default Welcome;

@@ -1,60 +1,58 @@
-.nav-container {
-  border: 2px solid black;
-}
-
-.topnav {
-  float: right;
+.cell-1 {
+  height: 10vh;
+  width: 100vw;
+  margin: auto;
+  padding: 0;
+  display: grid;
 }
 
 input[type="text"],
 input[type="search"] {
   padding: 6px;
-  /* margin-top: 5px; */
   font-size: 17px;
   border: 1px solid black;
 }
 
 button {
-  float: right;
-  padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 10px;
   background: #ddd;
   font-size: 17px;
   border: 1px solid black;
   cursor: pointer;
 }
-.nav-title {
-  color: black;
-}
-.nav-form {
-  padding: 12px;
-}
-
-.navlinks {
-  background-color: royalblue;
-}
 
 .navlinks {
   display: flex;
-  height: 50px;
-  margin: 0;
-  padding: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: royalblue;
+  height: 5vh;
+  padding: 10px;
   border: 1px solid #555;
 }
 
+.fab {
+  font-size: 50px;
+  margin: auto;
+  color: white;
+  padding: -5px;
+}
 .links {
   display: flex;
-  flex: 1;
-  border: 1px solid gray;
-  background-color: royalblue;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 20px;
+  background-color: #4167b2;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 30px;
   color: white;
+  text-decoration: none;
+}
+
+.links-bar {
+  list-style-type: none;
 }
 
 .links:hover {
-  color: red;
+  color: black;
 }

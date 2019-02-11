@@ -1,0 +1,95 @@
+.news-container {
+  height: 90vh;
+  display: grid;
+  margin: auto;
+  padding: 0;
+
+  grid-template-rows: auto 100px;
+  grid-template-columns: 200px auto 400px;
+
+  grid-template-areas:
+    "ads content sidebar"
+    "footer footer footer";
+}
+.feedlist-container {
+  width: 40vw;
+}
+
+.card-container {
+  height: 17%;
+  width: 75%;
+  margin-bottom: 5px;
+  /* border: 5px solid royalblue; */
+}
+.post-container {
+  height: 25vh;
+  width: 40vw;
+  margin-bottom: 5px;
+  margin: 0 auto;
+  padding: 0;
+  /* border: 5px solid royalblue; */
+}
+
+.image-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.post-image {
+  /* background-color: grey; */
+  margin: auto;
+}
+
+.postcard-container {
+  height: 55vh;
+  width: 40vw;
+  margin-bottom: 20px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 0;
+  /* border: 5px solid royalblue; */
+
+  grid-template-rows: 100px auto 100px;
+}
+.modal-button {
+  background-color: white;
+  color: royalblue;
+}
+
+.signature {
+  padding: 2px 16px;
+  background-color: royalblue;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 90%;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.adlink {
+  margin-bottom: 5px;
+  padding: 3px;
+  width: 13vw;
+  font-size: 20px;
+  list-style-type: none;
+}
+.adlink:hover {
+  background-color: white;
+}
+.far,
+.fas {
+  color: royalblue;
+  font-size: 25px;
+  padding: 3px;
+  margin-right: 5px;
+}
