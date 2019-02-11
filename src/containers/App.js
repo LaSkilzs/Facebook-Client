@@ -12,23 +12,24 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      parent: "welcome"
+      parent: "home"
     };
   }
   render() {
     return (
-      <div className="App">
-        <div className="container">
-          <Navbar parent={this.state.parent} />
-          <Switch>
-            <Route path="/welcome" component={Welcome} />
-            <Route path="/home" component={Home} />
-            <Route path="/newsfeed" component={NewsFeed} />
-            <Route path="/friends" component={Friends} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
+      // <div className="App">
+      <div className="container">
+        <Navbar parent={this.state.parent} />
+
+        <Switch>
+          <Route path="/welcome" component={Welcome} />
+          <Route path="/profile/:id" component={Home} />
+          <Route path="/newsfeed" component={NewsFeed} />
+          <Route path="/friends" component={Friends} />
+          <Route component={NotFound} />
+        </Switch>
       </div>
+      // </div>
     );
   }
 }
