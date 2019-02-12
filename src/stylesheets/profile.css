@@ -1,0 +1,32 @@
+.profile-container {
+  display: grid;
+  height: 40vh;
+  margin: 0 auto;
+  padding: 0;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "profileImage"
+    "navbar";
+}
+
+.profile-navlinks {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  background-color: white;
+}
+
+.profile-button {
+  background-color: white;
+  color: #4167b2;
+  border-radius: 15px;
+  border: 1px solid grey;
+}
+
+.profile-card {
+  background-color: white;
+  width: 65vw;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-bottom: 10px;
+}

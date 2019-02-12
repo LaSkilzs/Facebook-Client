@@ -9,7 +9,6 @@ class SideBar extends React.Component {
   render() {
     return (
       <div className="side-container">
-        SideBar List
         <SideCard />
         <SideCard />
         <SideCard />

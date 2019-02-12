@@ -3,10 +3,10 @@ import { Route, Switch } from "react-router-dom";
 import "../stylesheets/App.css";
 import Navbar from "./Navbar";
 import Welcome from "./Welcome";
-import Home from "./Home";
 import NewsFeed from "./NewsFeed";
 import Friends from "./Friends";
 import NotFound from "../components/NotFound";
+import ProfilePage from "../components/ProfilePage";
 
 class App extends React.Component {
   constructor() {
@@ -17,19 +17,17 @@ class App extends React.Component {
   }
   render() {
     return (
-      // <div className="App">
       <div className="container">
         <Navbar parent={this.state.parent} />
 
         <Switch>
           <Route path="/welcome" component={Welcome} />
-          <Route path="/profile/:id" component={Home} />
+          <Route path="/profilepage/:id" component={ProfilePage} />
           <Route path="/newsfeed" component={NewsFeed} />
           <Route path="/friends" component={Friends} />
           <Route component={NotFound} />
         </Switch>
       </div>
-      // </div>
     );
   }
 }

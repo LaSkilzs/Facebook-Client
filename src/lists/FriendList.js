@@ -9,20 +9,40 @@ class FriendList extends React.Component {
   render() {
     return (
       <div>
-        FriendList
         <header>
-          <h2>Respond to Your Friend Request</h2>
-          <a href="#" style={{ color: "#4167b2 ", textDecoration: "none" }}>
+          <h2 style={{ backgroundColor: "white" }}>
+            Respond to Your Friend Request
+          </h2>
+          <a
+            href="/"
+            style={{
+              color: "#4167b2 ",
+              textDecoration: "none",
+              backgroundColor: "white"
+            }}
+          >
             View Sent Requests
           </a>
         </header>
-        <hr />
+        <hr
+          style={{
+            border: "1px solid grey",
+            width: "100%",
+            margin: "auto"
+          }}
+        />
         <FriendCard />
         <FriendCard />
         <header>
-          <h2>People You May Know</h2>
+          <h2 style={{ backgroundColor: "white" }}>People You May Know</h2>
         </header>
-        <hr />
+        <hr
+          style={{
+            border: "1px solid grey",
+            width: "100%",
+            margin: "auto"
+          }}
+        />
         <FriendCard />
         <FriendCard />
         <FriendCard />

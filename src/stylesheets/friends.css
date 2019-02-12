@@ -14,10 +14,7 @@
 }
 
 .card {
-  /* border: 2px solid #4167b2; */
   display: grid;
-  /* margin-bottom: 10px; */
-
   grid-template-rows: auto;
   grid-template-columns: 300px auto 300px;
   background-color: white;
@@ -39,15 +36,16 @@ header {
   margin: auto;
   padding: 0;
   display: block;
+  background-color: white;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 .card-image {
   margin: auto;
   padding: 0;
   width: 20vw;
+  background-color: white;
 }
-.card-button {
-}
-
 button.friend {
   background-color: #4167b2;
   color: white;

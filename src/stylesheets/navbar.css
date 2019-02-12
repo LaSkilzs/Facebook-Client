@@ -1,9 +1,4 @@
-.cell-1 {
-  height: 10vh;
-  width: 100vw;
-  margin: auto;
-  padding: 0;
-  display: grid;
+.navbar-container {
 }
 
 input[type="text"],
@@ -25,12 +20,19 @@ button {
 
 .navlinks {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: royalblue;
   height: 5vh;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #555;
+}
+ul.navlinks {
+  list-style-type: none;
+}
+
+.navlinks a {
+  text-decoration: none;
+  background-color: royalblue;
 }
 
 .fab {
@@ -38,21 +40,19 @@ button {
   margin: auto;
   color: white;
   padding: -5px;
+  background-color: royalblue;
 }
 .links {
   display: flex;
-  background-color: #4167b2;
-  align-items: flex-end;
-  justify-content: flex-end;
   font-size: 30px;
   color: white;
-  text-decoration: none;
-}
-
-.links-bar {
-  list-style-type: none;
+  background-color: royalblue;
 }
 
 .links:hover {
   color: black;
+}
+
+.links-bar {
+  background-color: royalblue;
 }

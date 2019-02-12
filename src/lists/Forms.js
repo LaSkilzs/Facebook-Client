@@ -7,11 +7,7 @@ class Forms extends React.Component {
     this.state = {};
   }
   render() {
-    return (
-      <div>
-        <LoginCard />
-      </div>
-    );
+    return <LoginCard />;
   }
 }
 

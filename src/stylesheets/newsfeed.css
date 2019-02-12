@@ -16,64 +16,65 @@
 }
 
 .card-container {
-  height: 17%;
-  width: 75%;
-  margin-bottom: 5px;
-  /* border: 5px solid royalblue; */
-}
-.post-container {
-  height: 25vh;
-  width: 40vw;
-  margin-bottom: 5px;
+  height: auto;
+  width: 80%;
   margin: 0 auto;
-  padding: 0;
-  /* border: 5px solid royalblue; */
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.post-container {
+  height: 17vh;
+  width: 40vw;
+  margin-bottom: 30px;
 }
 
 .image-card {
   display: flex;
   flex-direction: row;
-}
-
-.post-image {
-  /* background-color: grey; */
-  margin: auto;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .postcard-container {
-  height: 55vh;
-  width: 40vw;
+  height: 60vh;
+  max-width: 35vw;
   margin-bottom: 20px;
   background-color: white;
   margin: 0 auto;
   padding: 0;
-  /* border: 5px solid royalblue; */
-
-  grid-template-rows: 100px auto 100px;
+  border-radius: 10px;
+  margin-bottom: 50px;
 }
-.modal-button {
+button.modal-button {
   background-color: white;
   color: royalblue;
+  border-radius: 5px;
+  font-size: 10px;
 }
 
 .signature {
   padding: 2px 16px;
-  background-color: royalblue;
-  color: white;
+  background-color: #e9ebee;
+  color: black;
 }
 
-/* Modal Body */
-.modal-body {
-  padding: 2px 16px;
-}
-
-/* Modal Content */
 .modal-content {
   position: relative;
   background-color: #fefefe;
   border: 1px solid #888;
-  width: 90%;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  width: 35vw;
+  border-radius: 5px;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
 }
 
 .adlink {
@@ -92,4 +93,8 @@
   font-size: 25px;
   padding: 3px;
   margin-right: 5px;
+}
+a {
+  text-decoration: none;
+  color: royalblue;
 }

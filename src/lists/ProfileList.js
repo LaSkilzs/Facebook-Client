@@ -6,8 +6,9 @@ class ProfileList extends React.Component {
   render() {
     return (
       <div className="profile-container">
-        ProfileList
         <CreatePost />
+        <PostCard />
+        <PostCard />
         <PostCard />
       </div>
     );
