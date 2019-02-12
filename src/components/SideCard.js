@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheets/home.css";
 
 const SideCard = props => {
   return (

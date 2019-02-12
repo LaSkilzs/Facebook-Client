@@ -5,10 +5,11 @@ import Footer from "../containers/Footer";
 
 class Friends extends React.Component {
   render() {
+    const { fakefriends, profiles } = this.props;
     return (
       <React.Fragment>
         <div className="friends-container">
-          <FriendList />
+          <FriendList fakefriends={fakefriends} profiles={profiles} />
           <Footer />
         </div>
       </React.Fragment>

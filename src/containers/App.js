@@ -12,9 +12,26 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      parent: "home"
+      parent: "home",
+      profiles: [],
+      fakefriends: [],
+      posts: [],
+      comments: []
     };
   }
+
+  async componentDidMount() {
+    const responsePr = await fetch("http://localhost:3000/api/v1/profiles");
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const responsePo = await fetch("http://localhost:3000/api/v1/posts");
+    const responseC = await fetch("http://localhost:3000/api/v1/comments");
+    const profiles = await responsePr.json();
+    const fakefriends = await response.json();
+    const posts = await responsePo.json();
+    const comments = await responseC.json();
+    this.setState({ profiles, fakefriends, posts, comments });
+  }
+
   render() {
     return (
       <div className="container">
@@ -23,8 +40,24 @@ class App extends React.Component {
         <Switch>
           <Route path="/welcome" component={Welcome} />
           <Route path="/profilepage/:id" component={ProfilePage} />
-          <Route path="/newsfeed" component={NewsFeed} />
-          <Route path="/friends" component={Friends} />
+          <Route
+            path="/newsfeed"
+            render={() => (
+              <NewsFeed
+                posts={this.state.posts}
+                comments={this.state.comments}
+              />
+            )}
+          />
+          <Route
+            path="/friends"
+            render={() => (
+              <Friends
+                profiles={this.state.profiles}
+                fakefriends={this.state.fakefriends}
+              />
+            )}
+          />
           <Route component={NotFound} />
         </Switch>
       </div>

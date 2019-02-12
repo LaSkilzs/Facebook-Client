@@ -10,12 +10,15 @@ class NewsFeed extends React.Component {
     super();
     this.state = {};
   }
+
   render() {
+    const { comments, posts } = this.props;
+
     return (
       <React.Fragment>
         <div className="news-container">
           <Ads />
-          <NewsFeedList />
+          <NewsFeedList comments={comments} posts={posts} />
           <SideBar />
           <Footer />
         </div>

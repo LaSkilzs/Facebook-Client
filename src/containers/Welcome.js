@@ -1,7 +1,7 @@
 import React from "react";
 import "../stylesheets/welcome.css";
-import WelcomePage from "../components/WelcomeCard";
-import Forms from "../lists/Forms";
+import WelcomePage from "../components/WelcomePage";
+import LoginCard from "../components/LoginCard";
 
 class Welcome extends React.Component {
   constructor() {
@@ -13,7 +13,7 @@ class Welcome extends React.Component {
       <React.Fragment>
         <div className="welcome-container">
           <WelcomePage />
-          <Forms />
+          <LoginCard />
         </div>
       </React.Fragment>
     );

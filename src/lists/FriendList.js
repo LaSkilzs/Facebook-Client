@@ -7,6 +7,7 @@ class FriendList extends React.Component {
     this.state = {};
   }
   render() {
+    const { fakefriends, profiles } = this.props;
     return (
       <div>
         <header>
@@ -31,8 +32,10 @@ class FriendList extends React.Component {
             margin: "auto"
           }}
         />
-        <FriendCard />
-        <FriendCard />
+        {profiles.map(profile => {
+          return <FriendCard key={profile.id} profile={profile} />;
+        })}
+
         <header>
           <h2 style={{ backgroundColor: "white" }}>People You May Know</h2>
         </header>
@@ -43,9 +46,9 @@ class FriendList extends React.Component {
             margin: "auto"
           }}
         />
-        <FriendCard />
-        <FriendCard />
-        <FriendCard />
+        {fakefriends.map(friend => {
+          return <FriendCard key={friend.id} friend={friend} />;
+        })}
       </div>
     );
   }
