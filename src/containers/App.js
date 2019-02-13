@@ -58,7 +58,6 @@ class App extends React.Component {
   logout = () => this.setState({ username: "" });
 
   createUser = e => {
-    // console.log("i work");
     if (e.target.name === "username") {
       this.setState({ username: e.target.value });
     } else if (e.target.name === "email") {
@@ -111,7 +110,7 @@ class App extends React.Component {
       email: email
     };
 
-    if (API.login(user) !== {}) {
+    if (API.create(user) !== {}) {
       this.setState({ login: user["username"] });
     }
   };
