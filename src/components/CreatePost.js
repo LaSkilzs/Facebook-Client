@@ -17,25 +17,36 @@ class CreatePost extends React.Component {
             </h2>
           </div>
           <div className="modal-body">
-            <textarea name="post" cols="50" rows="8" />
+            <textarea
+              name="post"
+              cols="50"
+              rows="8"
+              style={{ fontSize: "20px" }}
+              value={this.props.value}
+              onChange={e => this.props.createPost(e.target.value)}
+            />
           </div>
           <div className="signature">
-            <button type="button" className="modal-button">
+            <button
+              type="button"
+              className="modal-button"
+              onClick={this.props.postClickHandler}
+            >
               <i className="fas fa-pencil-alt" style={{ fontSize: "10px" }} />
               create post
             </button>
             <button type="button" className="modal-button">
               <i className="fas fa-camera-retro" style={{ fontSize: "10px" }} />
-              photo/video
+              create photo
             </button>
             <button type="button" className="modal-button">
-              <i className="fas fa-images" style={{ fontSize: "10px" }} />
-              photo/video
+              <i className="fas fa-video" style={{ fontSize: "10px" }} />
+              create video
             </button>
-            <button type="button" className="modal-button">
+            {/* <button type="button" className="modal-button">
               <i className="fas fa-user-tag" style={{ fontSize: "10px" }} />
               tag friends
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

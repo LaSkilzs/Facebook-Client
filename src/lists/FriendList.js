@@ -11,9 +11,7 @@ class FriendList extends React.Component {
     return (
       <div>
         <header>
-          <h2 style={{ backgroundColor: "white" }}>
-            Respond to Your Friend Request
-          </h2>
+          <h2 style={{ backgroundColor: "white" }}>People You May Know</h2>
           <a
             href="/"
             style={{
@@ -35,9 +33,10 @@ class FriendList extends React.Component {
         {profiles.map(profile => {
           return <FriendCard key={profile.id} profile={profile} />;
         })}
-
         <header>
-          <h2 style={{ backgroundColor: "white" }}>People You May Know</h2>
+          <h2 style={{ backgroundColor: "white" }}>
+            Respond to Your Friend Request
+          </h2>
         </header>
         <hr
           style={{
@@ -46,9 +45,9 @@ class FriendList extends React.Component {
             margin: "auto"
           }}
         />
-        {fakefriends.map(friend => {
+        {/* {fakefriends.map(friend => {
           return <FriendCard key={friend.id} friend={friend} />;
-        })}
+        })} */}
       </div>
     );
   }

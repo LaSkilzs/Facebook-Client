@@ -7,6 +7,8 @@ import NewsFeed from "./NewsFeed";
 import Friends from "./Friends";
 import NotFound from "../components/NotFound";
 import ProfilePage from "../components/ProfilePage";
+import userData from "../user";
+import API from "../API";
 
 class App extends React.Component {
   constructor() {
@@ -16,7 +18,21 @@ class App extends React.Component {
       profiles: [],
       fakefriends: [],
       posts: [],
-      comments: []
+      filteredPosts: [],
+      comments: [],
+      userData: userData,
+      post: {
+        id: 0,
+        text: "",
+        image: "",
+        likes: 0,
+        comments: 0,
+        user_id: 0
+      },
+      value: "",
+      user: {},
+      username: "",
+      login: ""
     };
   }
 
@@ -29,23 +45,94 @@ class App extends React.Component {
     const fakefriends = await response.json();
     const posts = await responsePo.json();
     const comments = await responseC.json();
-    this.setState({ profiles, fakefriends, posts, comments });
+    this.setState({
+      profiles,
+      fakefriends,
+      posts,
+      comments,
+      filteredPosts: posts
+    });
   }
 
+  login = username => this.setState({ username });
+  logout = () => this.setState({ username: "" });
+
+  createPost = value => {
+    if (value.toLowerCase().includes("http")) {
+      this.setState(prevState => ({
+        post: {
+          ...prevState.post,
+          image: value,
+          user_id: this.state.userData[0].id
+        },
+        value: ""
+      }));
+    } else {
+      this.setState(prevState => ({
+        post: {
+          ...prevState.post,
+          text: value
+        },
+        value: ""
+      }));
+    }
+  };
+
+  postClickHandler = () => {
+    console.log(this.state.post);
+    console.log(this.state.value);
+    const filteredPosts = [this.state.post, ...this.state.posts];
+    this.setState(prevState => ({
+      filteredPosts,
+      post: {
+        ...prevState.post,
+        text: "",
+        image: ""
+      }
+    }));
+  };
+
+  handleSubmit = (e, username, password, email) => {
+    e.preventDefault();
+    let user = {
+      username: username,
+      password: password,
+      email: email
+    };
+
+    if (API.login(user) !== {}) {
+      this.login(user.username);
+    }
+    // this.history.push("/profilepage/:id");
+    console.log(this);
+  };
+
   render() {
+    // console.log(this.state.filteredPosts);
     return (
       <div className="container">
         <Navbar parent={this.state.parent} />
 
         <Switch>
-          <Route path="/welcome" component={Welcome} />
-          <Route path="/profilepage/:id" component={ProfilePage} />
+          <Route
+            path="/welcome"
+            render={routerProps => {
+              return (
+                <Welcome handleSubmit={this.handleSubmit} {...routerProps} />
+              );
+            }}
+          />
+          <Route path="/profilepage/:id" render={() => <ProfilePage />} />
           <Route
             path="/newsfeed"
             render={() => (
               <NewsFeed
-                posts={this.state.posts}
+                posts={this.state.filteredPosts}
                 comments={this.state.comments}
+                userData={this.state.userData}
+                createPost={this.createPost}
+                value={this.state.value}
+                postClickHandler={this.postClickHandler}
               />
             )}
           />

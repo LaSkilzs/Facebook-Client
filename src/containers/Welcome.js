@@ -13,7 +13,7 @@ class Welcome extends React.Component {
       <React.Fragment>
         <div className="welcome-container">
           <WelcomePage />
-          <LoginCard />
+          <LoginCard handleSubmit={this.props.handleSubmit} />
         </div>
       </React.Fragment>
     );

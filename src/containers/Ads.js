@@ -2,8 +2,8 @@ import React from "react";
 import AdCard from "../components/AdCard";
 
 class Ads extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
   render() {
