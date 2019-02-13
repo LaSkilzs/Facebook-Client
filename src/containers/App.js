@@ -68,6 +68,7 @@ class App extends React.Component {
   };
 
   createPost = value => {
+    console.log(value);
     if (value.toLowerCase().includes("http")) {
       this.setState(prevState => ({
         post: {

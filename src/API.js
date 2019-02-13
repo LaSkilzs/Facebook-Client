@@ -16,11 +16,16 @@ class API {
     fetch("http://localhost:3000/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user)
+      body: JSON.stringify({
+        username: user.username,
+        password: user.password
+      })
     })
-      .then(response => response.json())
+      .then(response => {
+        response.json();
+      })
       .then(data => {
-        console.log(data);
+        // console.log(data);
       });
   }
 }

@@ -11,20 +11,6 @@ class CreatePost extends React.Component {
     };
   }
 
-  // handleTextAreaChange = e => {
-  //   if (e.target.value.toLowerCase().includes("http")) {
-  //     this.setState({ image: e.target.value });
-  //   } else {
-  //     this.setState({ text: e.target.value });
-  //   }
-  // };
-
-  // handleImageInputChange = e => this.setState({ image: e.target.value });
-
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  // };
-
   render() {
     return (
       <div className="post-container">
