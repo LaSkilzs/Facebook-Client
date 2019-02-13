@@ -13,7 +13,7 @@ class NewsFeedList extends React.Component {
           createPost={this.props.createPost}
           value={this.props.value}
         />
-        <Post />
+        {/* <Post /> */}
         {posts.map(post => {
           return <PostCard key={post.id} post={post} focus={focus} />;
         })}

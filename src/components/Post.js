@@ -13,7 +13,7 @@ const Post = () => {
           }}
         />
         <span style={{ padding: "10px" }}>
-          <strong style={{ fontSize: "20px" }}>NOThING</strong>
+          <strong style={{ fontSize: "20px" }}>username</strong>
           shared post with friends and group.
         </span>
       </div>

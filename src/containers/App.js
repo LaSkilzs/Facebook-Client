@@ -57,6 +57,17 @@ class App extends React.Component {
   login = username => this.setState({ username });
   logout = () => this.setState({ username: "" });
 
+  createUser = e => {
+    // console.log("i work");
+    if (e.target.name === "username") {
+      this.setState({ username: e.target.value });
+    } else if (e.target.name === "email") {
+      this.setState({ email: e.target.value });
+    } else if (e.target.name === "password") {
+      this.setState({ password: e.target.value });
+    }
+  };
+
   createPost = value => {
     if (value.toLowerCase().includes("http")) {
       this.setState(prevState => ({
@@ -101,28 +112,51 @@ class App extends React.Component {
     };
 
     if (API.login(user) !== {}) {
-      this.login(user.username);
+      this.setState({ login: user["username"] });
     }
-    // this.history.push("/profilepage/:id");
-    console.log(this);
+  };
+
+  handleLogin = (e, username, password) => {
+    e.preventDefault();
+
+    let user = {
+      username: username,
+      password: password
+    };
+
+    if (API.login(user) !== {}) {
+      this.setState({ login: user["username"] });
+    }
+    console.log(user);
   };
 
   render() {
-    // console.log(this.state.filteredPosts);
+    console.log(this.state.login);
     return (
       <div className="container">
-        <Navbar parent={this.state.parent} />
+        <Navbar
+          login={this.state.login}
+          handleLogin={this.handleLogin}
+          loginUser={this.loginUser}
+        />
 
         <Switch>
           <Route
             path="/welcome"
             render={routerProps => {
               return (
-                <Welcome handleSubmit={this.handleSubmit} {...routerProps} />
+                <Welcome
+                  handleSubmit={this.handleSubmit}
+                  login={this.state.login}
+                  {...routerProps}
+                />
               );
             }}
           />
-          <Route path="/profilepage/:id" render={() => <ProfilePage />} />
+          <Route
+            path="/profilepage/:id"
+            render={() => <ProfilePage login={this.state.login} />}
+          />
           <Route
             path="/newsfeed"
             render={() => (
@@ -133,6 +167,7 @@ class App extends React.Component {
                 createPost={this.createPost}
                 value={this.state.value}
                 postClickHandler={this.postClickHandler}
+                login={this.state.login}
               />
             )}
           />
@@ -142,6 +177,7 @@ class App extends React.Component {
               <Friends
                 profiles={this.state.profiles}
                 fakefriends={this.state.fakefriends}
+                login={this.state.login}
               />
             )}
           />
